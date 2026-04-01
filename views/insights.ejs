@@ -1,0 +1,14 @@
+<%- include("partials/navbar") %>
+
+<h2>Insights</h2>
+
+<p>
+Highest Spending Category:
+<strong>
+<%= transactions
+    .filter(t => t.type === "expense")
+    .sort((a,b) => b.amount - a.amount)[0].category %>
+</strong>
+</p>
+
+<%- include("partials/footer") %>
