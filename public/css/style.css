@@ -13,10 +13,30 @@ body {
 
 /* NAVBAR */
 nav {
-    background: #1E3A8A;
-    padding: 12px 20px;
+    background: linear-gradient(90deg, #1E3A8A, #3B82F6);
+    padding: 12px 30px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* LEFT SIDE */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.logo {
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+/* LINKS */
+.nav-links {
+    display: flex;
     gap: 20px;
 }
 
@@ -24,12 +44,70 @@ nav a {
     color: white;
     text-decoration: none;
     font-weight: 500;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* SMOOTH UNDERLINE */
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: white;
+    bottom: -4px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a:hover {
+    color: #E0E7FF;
+    transform: translateY(-1px);
+}
+
+/* CENTER QUOTE */
+.nav-center {
+    flex: 1;
+    text-align: center;
+}
+
+.nav-quote {
+    color: #DBEAFE;
+    font-size: 13px;
+    font-style: italic;
+}
+
+/* RIGHT SIDE */
+.nav-right {
+    display: flex;
+    align-items: center;
 }
 
 nav select {
-    padding: 5px;
-    border-radius: 5px;
+    padding: 6px 8px;
+    border-radius: 6px;
     border: none;
+    transition: 0.3s;
+}
+
+nav select:hover {
+    transform: scale(1.05);
+}
+
+
+@keyframes fadeInNav {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* HEADING */
@@ -61,6 +139,17 @@ h1 {
 .card p {
     font-size: 22px;
     font-weight: 600;
+}
+
+/* CARD HOVER EFFECT */
+.card, .insight-card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover, .insight-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
 }
 
 /* COLORS FOR VALUES */
@@ -104,6 +193,40 @@ td {
 
 tr:hover {
     background: #F3F4F6;
+}
+
+/* CONTAINER */
+.container {
+    padding: 20px;
+}
+
+/* PAGE TITLE */
+.page-title {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+/* INSIGHT CARD */
+.insight-card {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    max-width: 500px;
+}
+
+/* HIGHLIGHT TEXT */
+.highlight {
+    font-size: 22px;
+    font-weight: 600;
+    color: #DC2626;
+    margin: 10px 0;
+}
+
+/* SUB TEXT */
+.sub-text {
+    font-size: 14px;
+    color: #6B7280;
 }
 
 .footer {
