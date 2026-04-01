@@ -1,0 +1,38 @@
+<%- include("partials/navbar") %>
+
+<h1>Finance Dashboard</h1>
+
+<div class="cards">
+    <div class="card">
+        <h3>Total Balance</h3>
+        <p>
+            ₹<%= transactions.reduce((acc, t) => 
+                t.type === "income" ? acc + t.amount : acc - t.amount, 0) %>
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>Total Income</h3>
+        <p>
+            ₹<%= transactions
+                .filter(t => t.type === "income")
+                .reduce((a, t) => a + t.amount, 0) %>
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>Total Expenses</h3>
+        <p>
+            ₹<%= transactions
+                .filter(t => t.type === "expense")
+                .reduce((a, t) => a + t.amount, 0) %>
+        </p>
+    </div>
+</div>
+
+<canvas id="chart"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="/js/script.js"></script>
+
+<%- include("partials/footer") %>
