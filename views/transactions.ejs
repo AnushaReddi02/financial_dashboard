@@ -6,21 +6,25 @@
 <input type="text" id="search" placeholder="Search category..." />
 
 <table>
-    <tr>
-        <th>Date</th>
-        <th>Amount</th>
-        <th>Category</th>
-        <th>Type</th>
-    </tr>
-
-    <% transactions.forEach(t => { %>
+    <thead>
         <tr>
-            <td><%= t.date %></td>
-            <td>₹<%= t.amount %></td>
-            <td><%= t.category %></td>
-            <td><%= t.type %></td>
+            <th>Date</th>
+            <th>Amount</th>
+            <th>Category</th>
+            <th>Type</th>
         </tr>
-    <% }) %>
+    </thead>
+
+    <tbody id="tableBody">
+        <% transactions.forEach(t => { %>
+            <tr>
+                <td><%= t.date %></td>
+                <td>₹<%= t.amount %></td>
+                <td class="category"><%= t.category %></td>
+                <td><%= t.type %></td>
+            </tr>
+        <% }) %>
+    </tbody>
 </table>
 
 <%- include("partials/footer") %>
