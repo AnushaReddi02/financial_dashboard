@@ -1,0 +1,25 @@
+<%- include("partials/navbar") %>
+
+<h2>Transactions</h2>
+
+<input type="text" id="search" placeholder="Search category..." />
+
+<table>
+    <tr>
+        <th>Date</th>
+        <th>Amount</th>
+        <th>Category</th>
+        <th>Type</th>
+    </tr>
+
+    <% transactions.forEach(t => { %>
+        <tr>
+            <td><%= t.date %></td>
+            <td>₹<%= t.amount %></td>
+            <td><%= t.category %></td>
+            <td><%= t.type %></td>
+        </tr>
+    <% }) %>
+</table>
+
+<%- include("partials/footer") %>
