@@ -9,6 +9,8 @@ app.use(express.static(path.join(__dirname, "public")));
 
 const transactions = require("./data/transactions");
 
+const PORT = process.env.PORT || 3000;
+
 // Routes
 app.get("/", (req, res) => {
     res.render("dashboard", { transactions });
@@ -22,6 +24,6 @@ app.get("/insights", (req, res) => {
     res.render("insights", { transactions });
 });
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
     console.log("Server running on port 3000");
 });

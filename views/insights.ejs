@@ -5,17 +5,24 @@
 
     <h2 class="page-title">📊 Insights</h2>
 
-    <div class="insight-card">
-        <h3>Highest Spending Category</h3>
+    <% 
+        const expenses = transactions.filter(t => t.type === "expense");
+        const totalExpense = expenses.reduce((sum, t) => sum + t.amount, 0);
+        const highest = expenses.sort((a,b) => b.amount - a.amount)[0];
+        const percentage = ((highest.amount / totalExpense) * 100).toFixed(1);
+    %>
 
-        <p class="highlight">
-            <%= transactions
-                .filter(t => t.type === "expense")
-                .sort((a,b) => b.amount - a.amount)[0].category %>
+    <div class="insight-card">
+        <h3>💸 Highest Spending Category</h3>
+
+        <p class="highlight"><%= highest.category %></p>
+
+        <p class="sub-text">
+            You spent ₹<%= highest.amount %> on this category.
         </p>
 
         <p class="sub-text">
-            You are spending the most in this category. Consider optimizing your expenses.
+            This accounts for <strong><%= percentage %>%</strong> of your total expenses.
         </p>
     </div>
 

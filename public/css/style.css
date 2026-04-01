@@ -170,6 +170,11 @@ canvas {
 }
 
 /* TABLE */
+/* TABLE RESPONSIVE WRAPPER */
+.table-container {
+    overflow-x: auto;
+}
+
 table {
     width: 90%;
     margin: 20px auto;
@@ -263,14 +268,62 @@ tr:hover {
     color: #D1D5DB;
 }
 
-/* SEARCH BAR */
+/* ADD BUTTON */
+.add-btn {
+    margin: 10px 20px;
+    padding: 10px 16px;
+    background: #3B82F6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-btn:hover {
+    background: #1E3A8A;
+    transform: translateY(-2px);
+}
+
+/* FORM */
+.form-container {
+    margin: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.form-container input,
+.form-container select {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.form-container button {
+    background: #1E3A8A;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/*  SEARCH BAR */
 #search {
     display: block;
     margin: 20px auto;
-    padding: 10px;
-    width: 50%;
-    border-radius: 8px;
+    padding: 12px;
+    width: 60%;
+    border-radius: 10px;
     border: 1px solid #ccc;
+    transition: 0.3s;
+}
+
+#search:focus {
+    outline: none;
+    border-color: #3B82F6;
+    box-shadow: 0 0 6px rgba(59,130,246,0.3);
 }
 
 /* RESPONSIVE */

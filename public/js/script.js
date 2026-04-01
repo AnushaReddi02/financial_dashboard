@@ -29,6 +29,49 @@ if (ctx) {
 }
 
 
+// SHOW FORM
+const addBtn = document.querySelector(".add-btn");
+const form = document.getElementById("formContainer");
+
+if (addBtn) {
+    addBtn.addEventListener("click", () => {
+        form.style.display = form.style.display === "none" ? "block" : "none";
+    });
+}
+
+
+// ADD TRANSACTION (frontend only)
+function addTransaction() {
+    const category = document.getElementById("newCategory").value;
+    const amount = document.getElementById("newAmount").value;
+    const type = document.getElementById("newType").value;
+
+    if (!category || !amount) {
+        alert("Please fill all fields");
+        return;
+    }
+
+    const tableBody = document.getElementById("tableBody");
+
+    const row = document.createElement("tr");
+
+    row.innerHTML = `
+        <td>${new Date().toISOString().split("T")[0]}</td>
+        <td>₹${amount}</td>
+        <td class="category">${category}</td>
+        <td>${type}</td>
+    `;
+
+    tableBody.appendChild(row);
+
+    // ✅ Clear form
+    document.getElementById("newCategory").value = "";
+    document.getElementById("newAmount").value = "";
+
+    // ✅ CLOSE FORM AFTER ADDING
+    document.getElementById("formContainer").style.display = "none";
+}
+
 // 🔍 SEARCH FUNCTIONALITY
 const searchInput = document.getElementById("search");
 
