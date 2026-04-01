@@ -1,15 +1,24 @@
 <%- include("partials/header") %>
 <%- include("partials/navbar") %>
 
-<h2>Insights</h2>
+<div class="container">
 
-<p>
-Highest Spending Category:
-<strong>
-<%= transactions
-    .filter(t => t.type === "expense")
-    .sort((a,b) => b.amount - a.amount)[0].category %>
-</strong>
-</p>
+    <h2 class="page-title">📊 Insights</h2>
+
+    <div class="insight-card">
+        <h3>Highest Spending Category</h3>
+
+        <p class="highlight">
+            <%= transactions
+                .filter(t => t.type === "expense")
+                .sort((a,b) => b.amount - a.amount)[0].category %>
+        </p>
+
+        <p class="sub-text">
+            You are spending the most in this category. Consider optimizing your expenses.
+        </p>
+    </div>
+
+</div>
 
 <%- include("partials/footer") %>
