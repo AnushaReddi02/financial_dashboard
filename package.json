@@ -1,0 +1,23 @@
+{
+  "name": "financialdashboard",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/AnushaReddi02/financial_dashboard#readme",
+  "bugs": {
+    "url": "https://github.com/AnushaReddi02/financial_dashboard/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnushaReddi02/financial_dashboard.git"
+  },
+  "license": "ISC",
+  "author": "Anusha Reddi",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
