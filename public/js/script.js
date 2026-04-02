@@ -1,20 +1,39 @@
-// ROLE SWITCHER
-let role = "viewer";
+// ================= ROLE SWITCHER =================
+let role = localStorage.getItem("role") || "viewer";
 
-document.getElementById("roleSwitcher")?.addEventListener("change", (e) => {
-    role = e.target.value;
-    alert("Role switched to " + role);
+const roleSwitcher = document.getElementById("roleSwitcher");
+
+if (roleSwitcher) {
+    roleSwitcher.value = role;
+
+    roleSwitcher.addEventListener("change", (e) => {
+        role = e.target.value;
+        localStorage.setItem("role", role);
+
+        alert("Role switched to " + role);
+
+        applyRoleUI();
+    });
+}
+
+function applyRoleUI() {
+    const addBtn = document.querySelector(".add-btn");
+
+    if (!addBtn) return;
 
     if (role === "admin") {
-        document.body.classList.add("admin");
+        addBtn.style.display = "inline-block";
     } else {
-        document.body.classList.remove("admin");
+        addBtn.style.display = "none";
     }
-});
+}
+
+applyRoleUI();
 
 
-// CHART (only run if chart exists)
+// ================= CHART =================
 const ctx = document.getElementById("chart");
+
 if (ctx) {
     new Chart(ctx, {
         type: "bar",
@@ -29,50 +48,81 @@ if (ctx) {
 }
 
 
-// SHOW FORM
-const addBtn = document.querySelector(".add-btn");
-const form = document.getElementById("formContainer");
-
-if (addBtn) {
-    addBtn.addEventListener("click", () => {
-        form.style.display = form.style.display === "none" ? "block" : "none";
-    });
-}
-
-
-// ADD TRANSACTION (frontend only)
-function addTransaction() {
-    const category = document.getElementById("newCategory").value;
-    const amount = document.getElementById("newAmount").value;
-    const type = document.getElementById("newType").value;
+// ================= ADD TRANSACTION (NEW PAGE) =================
+function submitTransaction() {
+    const category = document.getElementById("category")?.value;
+    const amount = document.getElementById("amount")?.value;
+    const type = document.getElementById("type")?.value;
 
     if (!category || !amount) {
         alert("Please fill all fields");
         return;
     }
 
-    const tableBody = document.getElementById("tableBody");
+    let data = JSON.parse(localStorage.getItem("transactions")) || [];
 
-    const row = document.createElement("tr");
+    data.push({
+        date: new Date().toISOString().split("T")[0],
+        amount,
+        category,
+        type
+    });
 
-    row.innerHTML = `
-        <td>${new Date().toISOString().split("T")[0]}</td>
-        <td>₹${amount}</td>
-        <td class="category">${category}</td>
-        <td>${type}</td>
-    `;
+    localStorage.setItem("transactions", JSON.stringify(data));
 
-    tableBody.appendChild(row);
+    alert("Transaction added successfully!");
 
-    // ✅ Clear form
-    document.getElementById("newCategory").value = "";
-    document.getElementById("newAmount").value = "";
-
-    // ✅ CLOSE FORM AFTER ADDING
-    document.getElementById("formContainer").style.display = "none";
+    window.location.href = "/transactions";
 }
 
-// 🔍 SEARCH FUNCTIONALITY
+
+// ================= LOAD TRANSACTIONS =================
+function loadTransactions() {
+    const tableBody = document.getElementById("tableBody");
+    if (!tableBody) return;
+
+    let localData = JSON.parse(localStorage.getItem("transactions")) || [];
+
+    // Append ONLY localStorage data (keep existing EJS rows)
+    localData.forEach((t, index) => {
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+            <td>${t.date}</td>
+            <td>₹${t.amount}</td>
+            <td class="category">${t.category}</td>
+            <td>${t.type}</td>
+            <td>
+                <button class="delete-btn" onclick="deleteTransaction(${index})">
+                    Delete
+                </button>
+            </td>
+        `;
+
+        tableBody.appendChild(row);
+    });
+}
+
+
+// ================= DELETE =================
+function deleteTransaction(index) {
+    const confirmDelete = confirm("Are you sure you want to delete this transaction?");
+
+    if (!confirmDelete) return;
+
+    let data = JSON.parse(localStorage.getItem("transactions")) || [];
+
+    data.splice(index, 1);
+
+    localStorage.setItem("transactions", JSON.stringify(data));
+
+    alert("Transaction deleted!");
+
+    loadTransactions();
+}
+
+
+// ================= SEARCH =================
 const searchInput = document.getElementById("search");
 
 if (searchInput) {
@@ -83,11 +133,11 @@ if (searchInput) {
         rows.forEach(row => {
             const category = row.querySelector(".category").textContent.toLowerCase();
 
-            if (category.includes(value)) {
-                row.style.display = "";
-            } else {
-                row.style.display = "none";
-            }
+            row.style.display = category.includes(value) ? "" : "none";
         });
     });
 }
+
+
+// ================= INIT =================
+loadTransactions();

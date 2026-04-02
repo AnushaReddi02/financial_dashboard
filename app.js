@@ -20,6 +20,10 @@ app.get("/transactions", (req, res) => {
     res.render("transactions", { transactions });
 });
 
+app.get("/add", (req, res) => {
+    res.render("add");
+});
+
 app.get("/insights", (req, res) => {
     res.render("insights", { transactions });
 });

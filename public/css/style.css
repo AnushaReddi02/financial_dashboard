@@ -286,27 +286,57 @@ tr:hover {
     transform: translateY(-2px);
 }
 
-/* FORM */
-.form-container {
-    margin: 20px;
+/* FORM PAGE CENTER */
+.form-page {
     display: flex;
-    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
 }
 
-.form-container input,
-.form-container select {
-    padding: 8px;
-    border-radius: 6px;
+.form-card {
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 300px;
+}
+
+.form-card input,
+.form-card select {
+    padding: 10px;
+    border-radius: 8px;
     border: 1px solid #ccc;
 }
 
-.form-container button {
+.form-card button {
     background: #1E3A8A;
     color: white;
     border: none;
-    padding: 8px 12px;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.form-card button:hover {
+    background: #3B82F6;
+}
+
+/* DELETE BUTTON */
+td button {
+    background: #DC2626;
+    color: white;
+    border: none;
+    padding: 6px 10px;
     border-radius: 6px;
     cursor: pointer;
+}
+
+td button:hover {
+    background: #b91c1c;
 }
 
 /*  SEARCH BAR */

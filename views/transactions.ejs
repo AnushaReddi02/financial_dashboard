@@ -6,20 +6,13 @@
     <h2 class="page-title">Transactions</h2>
 
     <!-- ADMIN BUTTON -->
-    <button class="add-btn">+ Add Transaction</button>
-    <div id="formContainer" class="form-container" style="display:none;">
-    <input type="text" id="newCategory" placeholder="Category">
-    <input type="number" id="newAmount" placeholder="Amount">
-    <select id="newType">
-        <option value="income">Income</option>
-        <option value="expense">Expense</option>
-    </select>
-    <button onclick="addTransaction()">Add</button>
-</div>
+    <a href="/add">
+        <button class="add-btn">+ Add Transaction</button>
+    </a>
 
     <input type="text" id="search" placeholder="Search category..." />
 
-    <!-- TABLE WRAPPER FOR RESPONSIVENESS -->
+    <!-- TABLE WRAPPER -->
     <div class="table-container">
         <table>
             <thead>
@@ -28,19 +21,26 @@
                     <th>Amount</th>
                     <th>Category</th>
                     <th>Type</th>
+                    <th>Action</th>
                 </tr>
             </thead>
 
+            <!-- ⚠️ IMPORTANT: EMPTY tbody -->
             <tbody id="tableBody">
-                <% transactions.forEach(t => { %>
-                    <tr>
-                        <td><%= t.date %></td>
-                        <td>₹<%= t.amount %></td>
-                        <td class="category"><%= t.category %></td>
-                        <td><%= t.type %></td>
-                    </tr>
-                <% }) %>
-            </tbody>
+    <% transactions.forEach((t, index) => { %>
+        <tr>
+            <td><%= t.date %></td>
+            <td>₹<%= t.amount %></td>
+            <td class="category"><%= t.category %></td>
+            <td><%= t.type %></td>
+            <td>
+                <button class="delete-btn" onclick="deleteTransaction(<%= index %>)">
+                    Delete
+                </button>
+            </td>
+        </tr>
+    <% }) %>
+</tbody>
         </table>
     </div>
 
