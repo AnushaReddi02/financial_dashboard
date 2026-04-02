@@ -1,14 +1,25 @@
 # 💼 Finance Dashboard UI
 
-A clean and interactive finance dashboard built to help users track financial activity, visualize spending patterns, and manage transactions efficiently.
+A clean and interactive **Finance Dashboard** designed to help users track financial activity, visualize spending patterns, and manage transactions efficiently.
 
-This project focuses on frontend design, user experience, and state handling using EJS, Express, and JavaScript.
+This project demonstrates strong frontend fundamentals including UI design, state handling, and component structuring using EJS and Express.
 
 ---
 
 ## 🚀 Live Demo
 
-👉 https://your-deployed-link-here
+🌐 Live App: https://your-live-link-here  
+📂 GitHub Repo: https://github.com/AnushaReddi02/financial_dashboard
+
+---
+
+## 🖼️ UI Preview
+
+### 🏠 Home Page
+
+![Home Page](https://your-image-link-here)
+
+> Tip: Upload your screenshot to GitHub → drag & drop → copy link
 
 ---
 
@@ -16,114 +27,66 @@ This project focuses on frontend design, user experience, and state handling usi
 
 ### 📊 Dashboard Overview
 
-* Displays Total Balance, Income, and Expenses
-* Includes visual representation of financial data using charts
-* Clean card-based UI for quick insights
+- Displays **Total Balance, Income, and Expenses**
+- Visual representation using **Chart.js**
+- Clean card-based UI for quick insights
+
+---
 
 ### 📋 Transactions Section
 
-* View all transactions with:
+- View transactions with:
+  - Date  
+  - Amount  
+  - Category  
+  - Type (Income/Expense)  
 
-  * Date
-  * Amount
-  * Category
-  * Type (Income/Expense)
-* 🔍 Search functionality to filter transactions
-* ➕ Add Transaction feature (frontend simulation)
+- 🔍 Search functionality  
+- ➕ Add Transaction (Admin only - simulated)  
+- 🗑️ Delete Transaction with confirmation  
+
+---
 
 ### 🔐 Role-Based UI
 
-* Switch between **Viewer** and **Admin**
-* Admin can simulate adding transactions
-* Viewer has read-only access
+- Switch between:
+  - 👁️ Viewer → Read-only access  
+  - 🛠️ Admin → Add/Delete access  
+
+- UI dynamically updates based on selected role
+
+---
 
 ### 📈 Insights
 
-* Highlights highest spending category
-* Shows percentage contribution to total expenses
-* Provides useful financial observations
+- Highlights **highest spending category**
+- Displays meaningful financial observations
+- Simple analytics for better understanding
 
 ---
 
 ## 🧠 Tech Stack
 
-* **Frontend:** HTML, CSS, JavaScript, EJS
-* **Backend:** Node.js, Express
-* **Charts:** Chart.js
-* **Data:** Static mock data
+- **Frontend:** HTML, CSS, JavaScript, EJS  
+- **Backend:** Node.js, Express  
+- **Charts:** Chart.js  
+- **State:** LocalStorage (frontend simulation)  
 
 ---
 
 ## 🎨 UI/UX Highlights
 
-* Professional fintech color palette (blue, white, gray)
-* Smooth hover effects and transitions
-* Responsive design for different screen sizes
-* Clean layout with proper spacing and hierarchy
+- Professional **fintech color palette** (blue, white, gray)
+- Smooth hover effects & transitions
+- Responsive design (mobile-friendly)
+- Clean layout with proper spacing & hierarchy
 
 ---
 
 ## ⚙️ How to Run Locally
 
-1. Clone the repository
-
 ```bash
 git clone https://github.com/AnushaReddi02/financial_dashboard.git
-```
-
-2. Navigate into the project
-
-```bash
 cd financial_dashboard
-```
-
-3. Install dependencies
-
-```bash
 npm install
-```
-
-4. Start the server
-
-```bash
 npm start
-```
-
-5. Open in browser
-
-```bash
-http://localhost:3000
-```
-
----
-
-## 💡 Key Design Decisions
-
-* Focused on simplicity and clarity rather than over-complexity
-* Used EJS templating for modular and reusable UI components
-* Simulated role-based behavior on frontend without backend logic
-* Prioritized user experience with smooth interactions and responsiveness
-
----
-
-## 📈 Future Improvements
-
-* Data persistence using localStorage or database
-* Advanced filtering and sorting
-* Dark mode support
-* Export transactions (CSV/JSON)
-* Improved analytics and charts
-
----
-
-## 👩‍💻 Author
-
-**Anusha Reddi**
-
----
-
-## 📌 Note
-
-This project was created as part of a frontend developer internship assignment to demonstrate UI design, interaction handling, and frontend architecture.
-
----
