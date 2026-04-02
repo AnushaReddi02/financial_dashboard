@@ -17,7 +17,7 @@ This project demonstrates strong frontend development skills including **UI desi
 
 ### 🏠 Home Page
 
-![Home Page](./financial-dashboard-exew.onrender.com_(iPad Mini).png)
+![Home Page](https://github.com/AnushaReddi02/financial_dashboard/blob/main/Home%20Page.png?raw=true)
 
 ---
 
