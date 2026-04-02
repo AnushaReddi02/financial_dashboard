@@ -13,6 +13,10 @@ const PORT = process.env.PORT || 3000;
 
 // Routes
 app.get("/", (req, res) => {
+    res.render("home");
+});
+
+app.get("/dashboard", (req, res) => {
     res.render("dashboard", { transactions });
 });
 

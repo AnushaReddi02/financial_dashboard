@@ -110,6 +110,149 @@ nav select:hover {
     }
 }
 
+/* HERO */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    max-width: 1100px;
+    margin: 0 auto;
+
+    padding: 40px 20px;
+
+    gap: 80px;   /* 🔥 BIGGER GAP (main fix) */
+
+    min-height: 65vh;
+    background: #F9FAFB;
+}
+
+/* LEFT */
+.hero-left {
+    max-width: 500px;
+    flex: 1;
+}
+
+.hero-left h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1.2;
+    margin-bottom: 12px;
+}
+
+.hero-left span {
+    color: #2563EB;
+}
+
+.hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;  /* 🔥 pushes image to right */
+}
+
+.hero-sub {
+    font-size: 15px;
+    color: #6B7280;
+    margin-bottom: 18px;
+}
+
+/* 🔥 NEW QUOTE DESIGN (MATCH HEADER/FOOTER) */
+/* QUOTE HOVER EFFECT */
+.quote-box {
+    background: linear-gradient(135deg, #1E3A8A, #3B82F6);
+    padding: 12px 14px 12px 20px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    margin-left: 6px;
+    color: white;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;  /* 🔥 smooth animation */
+    cursor: pointer;
+}
+
+/* 🔥 HOVER */
+.quote-box:hover {
+    transform: translateY(-4px);  /* lift effect */
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    background: linear-gradient(135deg, #1D4ED8, #2563EB); /* slight color shift */
+}
+
+.quote-text {
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.quote-author {
+    font-size: 12px;
+    margin-top: 6px;
+    opacity: 0.8;
+}
+
+/* BUTTONS */
+.hero-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-dark {
+    padding: 9px 14px;
+    background: #111827;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-dark:hover {
+    background: #1F2937;
+}
+
+.btn-light {
+    padding: 9px 14px;
+    background: #2563EB;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-light:hover {
+    background: #1D4ED8;
+}
+
+/* RIGHT IMAGE */
+.hero-right img {
+    width: 240px; /* slightly smaller */
+    opacity: 0.95;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-right img {
+        width: 180px;
+        margin-top: 20px;
+    }
+
+    .hero-right {
+        justify-content: center;
+    }
+
+}
 /* HEADING */
 h1 {
     margin: 20px;
@@ -384,5 +527,36 @@ td button:hover {
 
     .footer-bottom {
         font-size: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 10px 15px;
+    }
+
+    .nav-left {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: space-around;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .nav-center {
+        display: none;  /* 🔥 THIS FIXES YOUR SCREEN */
+    }
+
+    .nav-right {
+        width: 100%;
+        justify-content: flex-end;
     }
 }
