@@ -1,14 +1,14 @@
 # 💼 Finance Dashboard UI
 
-A clean and interactive **Finance Dashboard** designed to help users track financial activity, visualize spending patterns, and manage transactions efficiently.
+A modern and interactive **Finance Dashboard** designed to help users track financial activity, visualize spending patterns, and manage transactions efficiently.
 
-This project demonstrates strong frontend fundamentals including UI design, state handling, and component structuring using EJS and Express.
+This project demonstrates strong frontend development skills including **UI design, state handling, responsive layouts, and role-based interaction** using EJS and Express.
 
 ---
 
 ## 🚀 Live Demo
 
-🌐 Live App: https://your-live-link-here  
+🌐 Live App: https://financial-dashboard-exew.onrender.com  
 📂 GitHub Repo: https://github.com/AnushaReddi02/financial_dashboard
 
 ---
@@ -17,69 +17,89 @@ This project demonstrates strong frontend fundamentals including UI design, stat
 
 ### 🏠 Home Page
 
-![Home Page](https://your-image-link-here)
-
-> Tip: Upload your screenshot to GitHub → drag & drop → copy link
+![Home Page](./financial-dashboard-exew.onrender.com_(iPad Mini).png)
 
 ---
 
-## 📌 Features
+## 📌 Project Overview
+
+This dashboard simulates a real-world financial tracking system where users can:
+
+- Monitor income and expenses
+- Analyze spending behavior
+- Manage transactions efficiently
+- Interact with role-based UI (Admin / Viewer)
+
+The focus of this project is on **frontend architecture, usability, and clean design**, rather than backend complexity.
+
+---
+
+## ✨ Features
 
 ### 📊 Dashboard Overview
 
 - Displays **Total Balance, Income, and Expenses**
-- Visual representation using **Chart.js**
-- Clean card-based UI for quick insights
+- Interactive **Chart.js visualization**
+- Clean card-based UI for quick financial insights
 
 ---
 
-### 📋 Transactions Section
+### 📋 Transactions Management
 
-- View transactions with:
+- View transaction details:
   - Date  
   - Amount  
   - Category  
-  - Type (Income/Expense)  
+  - Type (Income/Expense)
 
-- 🔍 Search functionality  
-- ➕ Add Transaction (Admin only - simulated)  
+- 🔍 Search functionality (real-time filtering)  
+- ➕ Add Transaction (Admin only - frontend simulation)  
 - 🗑️ Delete Transaction with confirmation  
 
 ---
 
 ### 🔐 Role-Based UI
 
-- Switch between:
-  - 👁️ Viewer → Read-only access  
-  - 🛠️ Admin → Add/Delete access  
+- 👁️ **Viewer**
+  - Read-only access
+  - Cannot modify data
 
-- UI dynamically updates based on selected role
+- 🛠️ **Admin**
+  - Can add/delete transactions
+  - Full control over UI interactions
 
----
-
-### 📈 Insights
-
-- Highlights **highest spending category**
-- Displays meaningful financial observations
-- Simple analytics for better understanding
+- Role switching handled dynamically on frontend
 
 ---
 
-## 🧠 Tech Stack
+### 📈 Insights Section
 
-- **Frontend:** HTML, CSS, JavaScript, EJS  
-- **Backend:** Node.js, Express  
-- **Charts:** Chart.js  
-- **State:** LocalStorage (frontend simulation)  
+- Identifies **highest spending category**
+- Provides simple financial observations
+- Helps users understand spending patterns
+
+---
+
+## 🧠 Tools & Technologies
+
+| Category        | Tools Used |
+|----------------|-----------|
+| Frontend       | HTML, CSS, JavaScript, EJS |
+| Backend        | Node.js, Express |
+| Charts         | Chart.js |
+| State Handling | LocalStorage |
+| Styling        | Custom CSS (Flexbox, Responsive Design) |
+| Deployment     | Render |
 
 ---
 
 ## 🎨 UI/UX Highlights
 
-- Professional **fintech color palette** (blue, white, gray)
-- Smooth hover effects & transitions
-- Responsive design (mobile-friendly)
-- Clean layout with proper spacing & hierarchy
+- Professional **fintech-inspired color palette** (blue, white, gray)
+- Smooth hover effects and transitions
+- Fully responsive design (mobile + tablet friendly)
+- Clean layout with proper spacing and hierarchy
+- Minimal and user-friendly interface
 
 ---
 
